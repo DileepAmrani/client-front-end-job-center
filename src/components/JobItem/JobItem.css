@@ -1,0 +1,30 @@
+.card {
+    display: flex;
+    padding: 10px;
+    /* min-height: 98px; */
+    /* border: 1px solid black; */
+}
+.logo {
+    margin: 10px;
+}
+.name {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 3px 0;
+}
+.address{
+    font-size: 14px;
+    display: block;
+    color: #9B9E9C;
+    font-weight: 400;
+}
+.salary, .type{
+    font-size: 14px;
+    color: #9B9E9C;
+    font-weight: 400;
+}
+.publishedOn {
+    font-size: 13px;
+    color: #9B9E9C;
+}

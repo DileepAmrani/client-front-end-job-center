@@ -1,0 +1,17 @@
+.jobCenter {
+    background: #E5E5E5;
+    height: 100vh;
+}
+.searchItemsContainer {
+    background: #ffffff;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.header {
+    padding: 10px;
+    display: flex;
+}
+
+.searchItems {
+    
+}

@@ -1,0 +1,47 @@
+/* Detail SIde */
+
+.jobDetail {
+  background: #ffffff;
+  padding: 10px;
+  background: #ffffff;
+  opacity: 0.9;
+  border-radius: 10px;
+  display: flex;
+}
+
+.logo {
+  margin: 10px;
+}
+
+.detailSection {
+  display: flex;
+  padding: 5px;
+  flex: 1;
+}
+.detailSection .name {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 3px 0;
+  color: #111e14;
+}
+.detailSection .address {
+  font-size: 14px;
+  color: #9b9e9c;
+  font-weight: 400;
+}
+.jobDetail .detail {
+  font-size: 14px;
+  color: #111e14;
+  font-weight: 500;
+}
+.publishedOn {
+  font-size: 13px;
+  color: #9b9e9c;
+  display: block;
+}
+
+.icon {
+  margin-top: 15px;
+  float: right;
+}

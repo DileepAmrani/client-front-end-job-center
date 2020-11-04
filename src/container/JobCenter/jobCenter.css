@@ -1,17 +1,23 @@
 .jobCenter {
-    background: #E5E5E5;
-    height: 100vh;
+  background: #e5e5e5;
+  height: 100vh;
 }
 .searchItemsContainer {
-    background: #ffffff;
-    margin-top: 10px;
-    border-radius: 10px;
+  background: #ffffff;
+  margin-top: 10px;
+  border-radius: 10px;
+  max-height: 781px;
 }
 .header {
-    padding: 10px;
-    display: flex;
+  padding: 20px;
+  display: flex;
 }
 
-.searchItems {
-    
+.jobsFound {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
 }
+

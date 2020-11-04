@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "./../../assets/companyLogoOne.png";
+import { BsBookmark } from "react-icons/bs";
 import "./JobItem.css";
 export default function index() {
   return (
@@ -14,7 +15,10 @@ export default function index() {
         <span className="type">Full-time </span>
       </div>
       <div>
-        <span className="publishedOn">10m ago</span>{" "}
+        <span className="publishedOn">10m ago</span>
+        <div className="icon">
+          <BsBookmark size={20} color="#111e14" />
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,40 @@
+.card {
+    display: flex;
+    padding: 10px;
+  cursor: pointer;
+
+    /* min-height: 98px; */
+    /* border: 1px solid black; */
+    /* border-left: 2px solid red; */
+}
+.logo {
+    margin: 10px;
+}
+.name {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 3px 0;
+    color: #111E14;
+}
+.address{
+    font-size: 14px;
+    display: block;
+    color: #9B9E9C;
+    font-weight: 400;
+}
+.salary, .type{
+    font-size: 14px;
+    color: #9B9E9C;
+    font-weight: 400;
+}
+.publishedOn {
+    font-size: 13px;
+    color: #9B9E9C;
+    display: block;
+}
+
+.icon {
+    margin-top: 15px;
+    float: right;
+}

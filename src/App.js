@@ -1,5 +1,5 @@
 import './App.css';
-import { JobCenter } from "./container";
+import { JobCenter } from "./Container";
 import { BrowserRouter as Router, Switch, Route  } from "react-router-dom";
 
 function App() {

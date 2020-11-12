@@ -1,5 +1,5 @@
 import './App.css';
-import { JobCenter } from "./Container";
+import { JobCenter, Dashboard } from "./Container";
 import { BrowserRouter as Router, Switch, Route  } from "react-router-dom";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={JobCenter} />
+        <Route  path="/dashboard" component={Dashboard} />
       </Switch>
     </Router>
   );

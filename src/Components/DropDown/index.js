@@ -1,21 +1,43 @@
-import React from "react";
-import { AiFillCaretDown } from "react-icons/ai";
-import "./DropDown.css";
-export default function index(props) {
+import React, { useState } from "react";
+import Select from "react-select";
+import { createUseStyles } from "react-jss";
+const useStyles = createUseStyles({
+  dropDown: {
+    minWidth: "150px",
+    background: "transparent"
+  },
+});
+
+const style = {
+  control: (base) => ({
+    ...base,
+    border: 0,
+    // This line disable the blue border
+    boxShadow: "none",
+    background: "transparent"
+  }),
+};
+const DropDown = (props) => {
+  const [selectedOption, setSelectedOption] = useState(null);
+  const classes = useStyles();
+
+  const handleChange = (selectedOption) => {
+    setSelectedOption({ selectedOption });
+  };
+
   return (
-    <div>
-      <div className="dropdown" style={props.style} >
-        <button className="dropbtn" style={{backgroundColor: "transparent"}}>
-          {props.name} <AiFillCaretDown />
-        </button>
-        <div className="dropdown-content">
-          <div className="item">Item One</div>
-          <div className="item">Item One</div>
-          <div className="item">Item One</div>
-          {/* <a href="#">Link 1</a>
-          <a href="#">Link 2</a> */}
-        </div>
-      </div>
-    </div>
+    <Select
+      value={selectedOption}
+      onChange={handleChange}
+      options={props.options}
+      className={classes.dropDown}
+      placeholder={props.title}
+      components={{
+        IndicatorSeparator: () => null,
+      }}
+      styles={props.border ? "" : style}
+    />
   );
-}
+};
+
+export default DropDown;

@@ -1,12 +1,12 @@
 import React from "react";
-import { createUseStyles } from "react-jss";
 import DropDown from "./../DropDown";
 import CheckBox from "./../CheckBox";
 import MultiSelect from "./../MutliSelect"
-const useStyles = createUseStyles({
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
   filterBar: {
     display: "flex",
-    // height: "70px",
     borderRadius: "4px",
     justifyContent: "flex-end",
     alignItems: "center",
@@ -22,7 +22,8 @@ const useStyles = createUseStyles({
       justifyContent: "flex-start",
     },
   },
-});
+}));
+
 const FilterBar = () => {
   const classes = useStyles();
   return (

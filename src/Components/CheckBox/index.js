@@ -10,7 +10,7 @@ export default function FormControlLabelPosition(props) {
       <FormGroup aria-label="position" row>
         <FormControlLabel
           value="start"
-          control={<Checkbox color="primary" />}
+          control={<Checkbox color="secondary" />}
           label={props.label}
           labelPlacement="end"
         />

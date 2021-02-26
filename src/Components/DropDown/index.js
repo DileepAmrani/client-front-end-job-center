@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import Select from "react-select";
-import { createUseStyles } from "react-jss";
-const useStyles = createUseStyles({
+import Select from "react-select"
+import { ArrowDropDown } from "@material-ui/icons";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
   dropDown: {
-    minWidth: "150px",
-    background: "transparent"
+    minWidth: "130px",
+    maxWidth: 180,
+    background: "transparent",
+    fontSize: '15px'
   },
-});
+}));
 
 const style = {
   control: (base) => ({
@@ -14,7 +18,7 @@ const style = {
     border: 0,
     // This line disable the blue border
     boxShadow: "none",
-    background: "transparent"
+    background: "transparent",
   }),
 };
 const DropDown = (props) => {
@@ -34,6 +38,7 @@ const DropDown = (props) => {
       placeholder={props.title}
       components={{
         IndicatorSeparator: () => null,
+        DropdownIndicator: () => <ArrowDropDown />
       }}
       styles={props.border ? "" : style}
     />

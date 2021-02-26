@@ -1,26 +1,31 @@
 import React from "react";
-import Logo from "./../../Assets/companyLogoOne.png";
 import { Bookmark, BookmarkBorderOutlined } from "@material-ui/icons";
 import IconButton from '@material-ui/core/IconButton';
-import cx from "clsx"
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
+import Avatar from "@material-ui/core/Avatar"
+import clsx from "clsx"
 
 const useStyles = makeStyles((theme) => ({
   card: {
     display: "flex",
     padding: "10px",
     cursor: "pointer",
+    borderLeft: '4px solid #fff',
+
   },
   activeCard: {
       borderLeft: '4px solid #1D8A8B',
       background: 'rgba(0, 0, 0, 0.03)'
   },
-  logo: {
-    margin: "10px",
+  avatar: {
+    width: theme.spacing(6.5),
+    height: theme.spacing(6.5),
   },
+
   middleSection: {
     flex: 1,
-    padding: "5px",
+    padding: "0 5px",
+    textAlign: 'left'
   },
   name: {
     display: "block",
@@ -51,32 +56,30 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
   },
   iconButton: {
-    marginTop: "15px",
+    marginTop: "20px",
     float: "right",
   },
 }));
 const JobItem = (props) => {
   const classes = useStyles();
   return (
-    <div className={cx(classes.card, props.active ? classes.activeCard : '')}>
+    <div className={clsx(classes.card, props.active ? classes.activeCard : '')}>
       <div>
-        <img src={Logo} alt="" className={classes.logo} />
+        <Avatar className={classes.avatar}>
+          AA
+        </Avatar>
       </div>
       <div className={classes.middleSection}>
-        <span className={classes.name}>Senior Product Designer </span>
-        <span className={classes.address}>Delta Dental, Oakland, CA </span>
+        <span className={classes.name}>Account Manager Retail</span>
+        <span className={classes.address}>Oakland, CA</span>
         <span className={classes.salary}>$80,000+, </span>
         <span className={classes.type}>Full-time </span>
       </div>
       <div>
-        <span className={classes.publishedOn}>10m ago</span>
         <div className={classes.iconButton}>
-
         <IconButton  component="span">
            {props.bookMarked ? <Bookmark color="secondary"/> : <BookmarkBorderOutlined/>} 
         </IconButton>
-
-        
         </div>
       </div>
     </div>

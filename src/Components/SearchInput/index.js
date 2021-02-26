@@ -1,8 +1,8 @@
 import React from "react";
 import { SearchOutlined } from "@material-ui/icons";
-import { createUseStyles } from "react-jss";
+import { makeStyles } from "@material-ui/core";
 
-const useStyles = createUseStyles({
+const useStyles = makeStyles((theme) => ({
   searchInput: {
     display: "flex",
     height: "48px",
@@ -23,7 +23,7 @@ const useStyles = createUseStyles({
     fontSize: "18px",
     outline: "none"
   },
-});
+}));
 
 const SearchInput = (props) => {
   const classes = useStyles();
@@ -36,7 +36,7 @@ const SearchInput = (props) => {
         <input
           type="text"
           className={classes.input}
-          placeholder="Search Jobs"
+          placeholder={props.label}
         />
       </div>
     </div>

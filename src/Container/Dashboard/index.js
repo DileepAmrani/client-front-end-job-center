@@ -6,7 +6,7 @@ import { Navbar, SearchInput, DropDown, JobCard } from "./../../Components";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
-import cx from 'clsx'
+import cx from "clsx";
 const useStyles = makeStyles((theme) => ({
   dashboard: {
     background: "#FAFAFC",
@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
   dashboardHeader: {
     display: "flex",
     margin: "8px 0",
-    alignItems: "center",
   },
   title: {
     fontSize: "26px",
@@ -29,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
   },
   dateBox: {
     display: "flex",
-    alignItems: "center",
     margin: "5px 0",
+    alignItems: "center",
   },
   date: {
     fontSize: "13px",
@@ -39,17 +38,17 @@ const useStyles = makeStyles((theme) => ({
   },
 
   toggleBtnContainer: {
-    margin: "5px"
+    margin: "5px",
   },
   groupBtn: {
-    boxShadow: "none"
+    boxShadow: "none",
   },
-  toggleBtn:{
+  toggleBtn: {
     boxShadow: "none",
     borderRadius: "4px",
     textTransform: "none",
   },
-  toggleBtnActive:{
+  toggleBtnActive: {
     background: "#1D8A8B",
     color: "#fff",
     boxShadow: "none",
@@ -59,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     display: "flex",
     padding: "10px",
-    alignItems: "center",
+    // alignItems: "center",
   },
   jobsFound: {
     fontSize: "18px",
@@ -85,7 +84,7 @@ const JobCenter = () => {
 
   return (
     <div className={classes.dashboard}>
-      <Navbar dashboard={true}/>
+      <Navbar dashboard={true} />
       <Container maxWidth="xl">
         <Grid container spacing={2}>
           <Grid item lg={3} md={12} sm={12} xs={12}>
@@ -110,15 +109,32 @@ const JobCenter = () => {
                       aria-label="contained button group"
                       className={classes.groupBtn}
                     >
-                      <Button  className={cx(classes.toggleBtn, classes.toggleBtnActive)}>Saved</Button>
-                      <Button className={cx(classes.toggleBtn, false ? classes.toggleBtnActive : "")}>Applied</Button>
+                      <Button
+                        className={cx(
+                          classes.toggleBtn,
+                          classes.toggleBtnActive
+                        )}
+                      >
+                        Saved
+                      </Button>
+                      <Button
+                        className={cx(
+                          classes.toggleBtn,
+                          false ? classes.toggleBtnActive : ""
+                        )}
+                      >
+                        Applied
+                      </Button>
                     </ButtonGroup>
                   </div>
                 </div>
               </div>
             </div>
             <div className={classes.dashboardRightContainer}>
-              <SearchInput styles={{ border: "1px solid #D5D7DD" }} />
+              <SearchInput
+                styles={{ border: "1px solid #D5D7DD" }}
+                label="Search Jobs"
+              />
               <div className={classes.header}>
                 <div>
                   <span className={classes.jobsFound}>Saved 5 jobs</span>
@@ -137,7 +153,7 @@ const JobCenter = () => {
               </div>
               <JobCard requestBox={true} />
               <JobCard />
-              <JobCard />
+              <JobCard shareBox={true} />
               <JobCard memberBox={true} />
               <JobCard memberBox={true} noteBox={true} />
             </div>

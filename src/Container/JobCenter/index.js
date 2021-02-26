@@ -6,19 +6,18 @@ import Logo from "./../../Assets/companyLogo90x90.png";
 import { AccessTime, Business, School } from "@material-ui/icons";
 import Chip from "@material-ui/core/Chip";
 import clsx from "clsx";
-
 import {
   Navbar,
   SearchInput,
   DropDown,
   JobItem,
-  FilterBar,
   Tabs,
+  CheckBox,
+  MultiSelect,
 } from "./../../Components";
-import "./JobCenter.css";
-import { createUseStyles } from "react-jss";
+import { makeStyles } from "@material-ui/core";
 
-const useStyles = createUseStyles({
+const useStyles = makeStyles((theme) => ({
   jobCenter: {
     background: "#FAFAFC",
   },
@@ -71,6 +70,19 @@ const useStyles = createUseStyles({
       borderRadius: "5px",
     },
   },
+  filterBar: {
+    display: "flex",
+    borderRadius: "4px",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  filterItem: {
+    marginRight: "10px",
+    minWidth: "170px",
+  },
+
   jobDetailContainer: {
     display: "flex",
     padding: "10px",
@@ -164,8 +176,11 @@ const useStyles = createUseStyles({
       padding: 0,
       margin: 0,
     },
+    filterBar: {
+      justifyContent: "flex-start",
+    },
   },
-});
+}));
 
 const JobCenter = () => {
   const [chipData, setChipData] = React.useState([
@@ -189,7 +204,10 @@ const JobCenter = () => {
         <Grid container spacing={2}>
           <Grid item lg={3} md={12} sm={12} xs={12}>
             <div>
-              <SearchInput styles={{ backgroundColor: "#F0F2F6" }} />
+              <SearchInput
+                styles={{ backgroundColor: "#F0F2F6" }}
+                label="Search Jobs"
+              />
             </div>
             <div className={classes.chipBox}>
               {chipData.map((data) => {
@@ -203,7 +221,6 @@ const JobCenter = () => {
                         data.label === "React" ? undefined : handleDelete(data)
                       }
                       className={classes.chip}
-                      // style={{borderRadius: '0'}}
                     />
                   </div>
                 );
@@ -244,8 +261,22 @@ const JobCenter = () => {
             </div>
           </Grid>
           <Grid item lg={9} md={12} sm={12} xs={12}>
-            <div>
-              <FilterBar />
+            <div className={classes.filterBar}>
+              <div className={classes.filterItem}>
+                <DropDown title="Recent searches" />
+              </div>
+              <div className={classes.filterItem}>
+                <MultiSelect title="Job Type" />
+              </div>
+              <div className={classes.filterItem}>
+                <MultiSelect title="Date Post" />
+              </div>
+              <div className={classes.filterItem}>
+                <MultiSelect title="Salary" />
+              </div>
+              <div className={classes.filterItem}>
+                <CheckBox label="Work from Home" />
+              </div>
             </div>
 
             <div className={classes.jobDetailContainer}>

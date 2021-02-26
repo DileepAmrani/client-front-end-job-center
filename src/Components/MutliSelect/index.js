@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import { ArrowDropDown } from "@material-ui/icons";
 
 const style = {
   control: (base) => ({
@@ -8,6 +9,8 @@ const style = {
     // This line disable the blue border
     boxShadow: "none",
     background: "transparent",
+    fontSize: '15px',
+
   }),
 };
 export const colourOptions = [
@@ -29,6 +32,7 @@ const MultiSelect = (props) => {
       placeholder={props.title}
       components={{
         IndicatorSeparator: () => null,
+        DropdownIndicator: () => <ArrowDropDown />
       }}
       styles={style}
     />

@@ -20,9 +20,19 @@ function Navbar(props) {
           {click ? <Close /> : <MenuOutlined />}
         </div>
         <ul className={click ? "navMenu active" : "navMenu"}>
-          <li className={"navItem" , props.home ? "activeLink" : ""} >
+          <li className={("navItem", props.home ? "activeLink" : "")}>
             <Link to="/" className="navLinks" onClick={closeMobileMenu}>
               Home
+            </Link>
+          </li>
+
+          <li className={("navItem", props.talentCenter ? "activeLink" : "")}>
+            <Link
+              to="/talent-center"
+              className="navLinks"
+              onClick={closeMobileMenu}
+            >
+              Talent Center
             </Link>
           </li>
 
@@ -31,7 +41,7 @@ function Navbar(props) {
               Reference Corner
             </Link>
           </li>
-          <li className={"navItem" , props.dashboard ? "activeLink" : ""} >
+          <li className={("navItem", props.dashboard ? "activeLink" : "")}>
             <Link
               to="/dashboard"
               className="navLinks"
